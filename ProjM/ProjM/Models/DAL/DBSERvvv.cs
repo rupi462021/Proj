@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Text;
 using System.Web.Configuration;
 
-namespace ProjectMPublish.Models.DAL
+namespace ProjM.Models.DAL
 {
     public class DBSERvvv
     {

@@ -186,6 +186,10 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\logo_kan.png" />
+    <Content Include="Images\logo_ogImageKan.jpg" />
+    <Content Include="Images\TV.gif" />
+    <Content Include="Images\youtube-promotion.jpg" />
     <Content Include="Pages\businesses.html" />
     <Content Include="Pages\ItemPage.html" />
     <Content Include="Pages\login.html" />
@@ -195,6 +199,9 @@
     <Content Include="Pages\SavedItems.html" />
     <Content Include="Pages\style.css" />
     <Content Include="Pages\videoPage.html" />
+    <Content Include="Scripts\ajaxCalls.js" />
+    <Content Include="Scripts\ajaxCallsWithKey.js" />
+    <Content Include="Scripts\ajaxjs.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

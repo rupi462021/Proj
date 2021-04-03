@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ProjectMPublish.Models.DAL
+namespace ProjM.Models.DAL
 {
     public class DBServ
     {

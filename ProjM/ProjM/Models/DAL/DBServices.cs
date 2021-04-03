@@ -12,9 +12,9 @@ using System.Net.Http;
 using System.Web.Http.Filters;
 using System.Windows;
 using System.Configuration;
-using ProjectMPublish.Models;
+using ProjM.Models;
 
-namespace ProjectMPublish.Models.DAL
+namespace ProjM.Models.DAL
 {
     public class DBServices
     {

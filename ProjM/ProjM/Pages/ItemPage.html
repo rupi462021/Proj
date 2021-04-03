@@ -239,7 +239,8 @@
             ajaxCall("POST", "../api/SavedItem", JSON.stringify(savedItem), postSaveSuccess, postSaveError);
         }
         function postSaveSuccess(data) {
-            alert("inserted, item = " + data);
+        /* alert("inserted, item = " + data);*/
+         swal("Added Successfuly!", "Great Job", "success");
             console.log(data);
             //setTimeout(function () {
             //    document.location = "businesses.html";

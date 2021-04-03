@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Web.Configuration;
 using System.Data;
 using System.Text;
-using ProjectMPublish.Models;
+using ProjM.Models;
 using System.Windows;
 using System.Configuration;
 
@@ -15,7 +15,7 @@ using System.Configuration;
 /// DBServices is a class created by me to provides some DataBase Services
 /// </summary>
 /// 
-namespace ProjectMPublish.Models.DAL
+namespace ProjM.Models.DAL
 {
 
     public class DBServicesS
