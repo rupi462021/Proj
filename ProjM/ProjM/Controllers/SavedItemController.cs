@@ -28,9 +28,9 @@ namespace ProjM.Controllers
             return "value";
         }
         // PUT api/<controller>/5
-        public void Put(int storyNum, [FromBody] RowEdit value)
+        public void Put(int id, [FromBody] RowEdit value)
         {
-            string q = "UPDATE SaveItem_2021 SET description='" + value.description + "', title='" + value.title + "' WHERE storyNum=" + value.storyNum;
+            string q = "UPDATE SaveItem_2021 SET description='" + value.description + "', title='" + value.title + "' WHERE storyNum=" + id;
             DBServicesS ds = new DBServicesS();
             ds.Update(q);
         }

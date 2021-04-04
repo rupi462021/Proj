@@ -173,6 +173,7 @@
                 };
 
                 $.ajax(settings).done(function (response) {
+                    swal("Item updated!", "Success");
                     console.log(response);
                 });
 
@@ -265,7 +266,7 @@
 
 
         function deleteSuccess(obj) {
-            alert('delete success');
+            swal("Delete success!", "Success");
         }
     </script>
 </head>
