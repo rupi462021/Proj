@@ -30,11 +30,13 @@
     <script src="../Scripts/jquery-3.4.1.js"></script>
     <script src="../Scripts/jquery-3.4.1.min.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <link href="style.css" rel="stylesheet" />
     <script src="../Scripts/ajaxCalls.js"></script>
 
     <script>
-        checkUser();
+        /*checkUser();*/
         function checkUser() {
             if (localStorage["userObject"] != null) {
                 tastStr = JSON.parse(localStorage["userObject"]);
@@ -51,6 +53,7 @@
         });
 
         ////////////
+        checkUser();
         var myHeaders = new Headers();
         myHeaders.append("Cookie", "__Host-GAPS=1:FsHQzwqwnMp9ThsOy3vv2m5mhJr4bA:Tp9fKrR5Z_pjUb7z");
 
@@ -64,7 +67,8 @@
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
-        //////////////
+
+
 
         /**
          * Sample JavaScript code for youtube.search.list
@@ -120,17 +124,17 @@
         function getVideosArray(videosArray) {
             console.log(videosArray[0].snippet.thumbnails.default.url);
             let str = `<div class="videos-list" id="videos-list" style="display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center">`
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center">`
 
             videosArray.forEach(video => {
 
 
                 str += `<div class="video" id="${video.id.videoId}" style="display:flex; justify-conter:center; align-items:center; border-bottom:1px solid black; padding:16px;">
-                                         <h6 style="margin-left:10px; width:700px">${video.snippet.title}</h6>
-                                            <button onclick=executevideo(this) class="pull_video">pull video</button>
-                                        </div>`
+                                             <h6 style="margin-left:10px; width:700px">${video.snippet.title}</h6>
+                                                <button onclick=executevideo(this) class="pull_video">pull video</button>
+                                            </div>`
             });
             str += `<div id="iframe_wrapper"> </div>"`
             document.getElementById("cointaner").innerHTML += str;
