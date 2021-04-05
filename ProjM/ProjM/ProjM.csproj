@@ -174,11 +174,17 @@
     <Compile Include="Models\RowEdit.cs" />
     <Compile Include="Models\SavedItem.cs" />
     <Compile Include="Models\Videos.cs" />
+    <Compile Include="Models\XMLService.cs" />
     <Compile Include="Models\XMLServiceItem.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\xmlfiles\HEBREW-מבזק טלויזיה-2021-03-15_00-00.xml" />
+    <Content Include="App_Data\xmlfiles\HEBREW-מהצד השני-2021-03-14_12-05.xml" />
+    <Content Include="App_Data\xmlfiles\HEBREW-משחקי הכיס-2021-03-14_19-15.xml" />
+    <Content Include="App_Data\xmlfiles\HEBREW-ערב ערב-2021-03-14_17-00.xml" />
+    <Content Include="App_Data\xmlfiles\HEBREW-קלמן-2021-03-14_18-00.xml" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
@@ -285,7 +291,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
