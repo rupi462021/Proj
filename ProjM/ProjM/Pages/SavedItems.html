@@ -13,6 +13,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="style.css" rel="stylesheet" />
     <script src="../Scripts/ajaxCalls.js"></script>
     <style>
@@ -152,13 +153,15 @@
                 });
 
 
-                var id = $(this).parents("tr").children(0).children(0)[0].value;
+                /*var id = $(this).parents("tr").children(0).children(0)[0].value;*/
+                var storyNum = $(this).parents("tr").children(0).children(0)[0].value;
                 var title = $(this).parents("tr").children(0).children(0)[1].value;
                 var desc = $(this).parents("tr").children(0).children(0)[2].value;
 
                 var settings = {
                     // "url": "https://localhost:44342/api/savedItem?id="+id,
-                    "url": "/api/SavedItem?id=" + id,
+                    /*"url": "/api/SavedItem?id=" + id,*/
+                    "url": "/api/SavedItem?storyNum=" + storyNum,
                     "method": "PUT",
                     "timeout": 0,
                     "headers": {
@@ -172,6 +175,7 @@
                 };
 
                 $.ajax(settings).done(function (response) {
+                    swal("successfully updated!", "Great Job", "success");
                     console.log(response);
                 });
 
@@ -233,15 +237,15 @@
             var htmlString = '';
             for (let i = 0; i < content.length; i++) {
                 htmlString += `<tr>
-                                        <td style="pointer-events:none">${content[i].storyNum}</td>
-                                        <td>${content[i].title}</td>
-                                        <td>${content[i].description}</td>
-                                        <td>
-                                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                        </td>
-                                    </tr>`
+                                            <td style="pointer-events:none">${content[i].storyNum}</td>
+                                            <td>${content[i].title}</td>
+                                            <td>${content[i].description}</td>
+                                            <td>
+                                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                            </td>
+                                        </tr>`
             }
 
 
@@ -256,15 +260,18 @@
 
         var row_to_delete;
         function deleteRow() {
-            var id = row_to_delete.children(":first").text();
-            ajaxCall('DELETE', '../api/SavedItem/' + id, '', deleteSuccess, errorCB)
+            var storyNum = row_to_delete.children(":first").text();
+            ajaxCall('DELETE', '../api/SavedItem?storyNum=' + storyNum, '', deleteSuccess, errorCB)
             row_to_delete.remove();
             $('.modal').hide();
+            /*?storyNum*/
+            /*"/api/SavedItem?storyNum=" + storyNum,*/
         }
 
 
         function deleteSuccess(obj) {
-            alert('delete success');
+            /*alert('delete success');*/
+            swal("Delete Successfuly!", "Great Job", "success");
         }
     </script>
 </head>

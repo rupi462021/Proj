@@ -30,14 +30,14 @@ namespace ProjM.Controllers
         // PUT api/<controller>/5
         public void Put(int storyNum, [FromBody] RowEdit value)
         {
-            string q = "UPDATE SaveItem_2021 SET description='" + value.description + "', title='" + value.title + "' WHERE storyNum=" + value.storyNum;
+            string q = "UPDATE SaveItem_2021 SET description='" + value.description + "', title='" + value.title + "' WHERE storyNum=" + storyNum;
             DBServicesS ds = new DBServicesS();
             ds.Update(q);
         }
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public void Delete(int storyNum)
         {
-            string q = "DELETE FROM SaveItem_2021 WHERE Id=" + id;
+            string q = "DELETE FROM SaveItem_2021 WHERE storyNum=" + storyNum;
             DBServicesS ds = new DBServicesS();
             ds.Update(q);
         }

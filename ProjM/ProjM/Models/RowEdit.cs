@@ -8,6 +8,7 @@ namespace ProjM.Models
 {
     public class RowEdit
     {
+        public int id { get; set; }
         public int storyNum { get; set; }
         public string title { get; set; }
         public string description { get; set; }
