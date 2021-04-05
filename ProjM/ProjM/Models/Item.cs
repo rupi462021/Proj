@@ -40,15 +40,21 @@ namespace ProjM.Models
 
 
         //Read all the lineup show
-        public List<Item> ReadItem()
-        {
-            XMLService xmls = new XMLService();
-            return xmls.Check();
-        }
         //public List<Item> ReadItem()
         //{
         //    XMLServiceItem xmls = new XMLServiceItem();
         //    return xmls.Check();
-        //}       
+        //}
+        public List<Item> ReadItem()
+        {
+            XMLServiceItem xmls = new XMLServiceItem();
+            return xmls.Check();
+        }
+        //public List<string> ReadItemShow()
+        //{
+        //    XMLServiceShow xmls = new XMLServiceShow();
+        //    return xmls.checkFile();
+        //}
+
     }
 }

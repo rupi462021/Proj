@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
     <!--<script src="C:\Users\reute\Desktop\Repos\ProjectMP\ProjectMPublish\ProjectMPublish\Scripts\jquery-3.4.1.js"></script>-->
-    <!--<script src="../Scripts/jquery-3.4.1.min.js"></script>-->
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
     <style type="text/css">
         .fakeimg {
            /* height: 200px;*/
@@ -249,8 +249,7 @@
             /*swal("Added Successfuly!", "Great Job", "success");*/
         }
         function postSaveError(err) {
-            swal("This item has been saved!", "Select another item");
-            /*alert(err.responseJSON.ExceptionMessage);*/
+            alert(err.responseJSON.ExceptionMessage);
             console.log(err.responseJSON);
         }
         function sendPost(msg) {
@@ -358,6 +357,8 @@
             console.log("YAHOOO");
             console.log(data[0].Ifrmae)
             let video = data[0].Ifrmae
+            //let vid = data[0].Ifrmae.src;
+            //let url = document.getElementsByTagName("ifrmae").src;
 
             $("#frame").append(video);
 
@@ -444,7 +445,11 @@
                                 <label for="title-input">שם תכנית</label>
                                 <input id="title-input" type="text" name="title-input" value="" /><br>
                                 <label for="id-input">מספר תכנית</label>
-                                <input id="id-input" type="text" name="id-input" value="" />
+                                <input id="id-input" type="text" name="id-input" value="" /><br>
+
+                                <!--<label for="id-viedo">ווידאו</label>
+                                <input id="id-viedo" type="text" name="id-viedo" value="" />-->
+
                             </div>
                             <div>
                                 <label for="desc-input">תאור</label>

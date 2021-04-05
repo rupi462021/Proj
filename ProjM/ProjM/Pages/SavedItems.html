@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>  
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="style.css" rel="stylesheet" />
     <script src="../Scripts/ajaxCalls.js"></script>
@@ -153,14 +153,13 @@
                 });
 
 
-                /*var id = $(this).parents("tr").children(0).children(0)[0].value;*/
-                var storyNum = $(this).parents("tr").children(0).children(0)[0].value;
+                var id = $(this).parents("tr").children(0).children(0)[0].value;
                 var title = $(this).parents("tr").children(0).children(0)[1].value;
                 var desc = $(this).parents("tr").children(0).children(0)[2].value;
 
                 var settings = {
                     // "url": "https://localhost:44342/api/savedItem?id="+id,
-                    /*"url": "/api/SavedItem?id=" + id,*/
+                    //"url": "/api/SavedItem?id=" + id,
                     "url": "/api/SavedItem?storyNum=" + storyNum,
                     "method": "PUT",
                     "timeout": 0,
@@ -175,7 +174,7 @@
                 };
 
                 $.ajax(settings).done(function (response) {
-                    swal("successfully updated!", "Great Job", "success");
+                    swal("Item updated!", "Success");
                     console.log(response);
                 });
 
@@ -256,8 +255,6 @@
             alert(err);
         }
 
-
-
         var row_to_delete;
         function deleteRow() {
             var storyNum = row_to_delete.children(":first").text();
@@ -267,11 +264,19 @@
             /*?storyNum*/
             /*"/api/SavedItem?storyNum=" + storyNum,*/
         }
+        //var row_to_delete;
+        //function deleteRow() {
+        //    var id = row_to_delete.children(":first").text();
+        //    ajaxCall('DELETE', '../api/SavedItem/' + id, '', deleteSuccess, errorCB)
+        //    row_to_delete.remove();
+        //    $('.modal').hide();
+        //    /*?storyNum*/
+        //    /*"/api/SavedItem?storyNum=" + storyNum,*/
+        //}
 
 
         function deleteSuccess(obj) {
-            /*alert('delete success');*/
-            swal("Delete Successfuly!", "Great Job", "success");
+            swal("Delete success!", "Success");
         }
     </script>
 </head>
