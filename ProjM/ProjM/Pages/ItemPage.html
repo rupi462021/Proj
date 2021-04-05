@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
     <!--<script src="C:\Users\reute\Desktop\Repos\ProjectMP\ProjectMPublish\ProjectMPublish\Scripts\jquery-3.4.1.js"></script>-->
-    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <!--<script src="../Scripts/jquery-3.4.1.min.js"></script>-->
     <style type="text/css">
         .fakeimg {
            /* height: 200px;*/
@@ -249,7 +249,8 @@
             /*swal("Added Successfuly!", "Great Job", "success");*/
         }
         function postSaveError(err) {
-            alert(err.responseJSON.ExceptionMessage);
+            swal("This item has been saved!", "Select another item");
+            /*alert(err.responseJSON.ExceptionMessage);*/
             console.log(err.responseJSON);
         }
         function sendPost(msg) {

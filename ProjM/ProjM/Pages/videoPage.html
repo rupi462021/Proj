@@ -22,6 +22,8 @@
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
@@ -120,17 +122,17 @@
         function getVideosArray(videosArray) {
             console.log(videosArray[0].snippet.thumbnails.default.url);
             let str = `<div class="videos-list" id="videos-list" style="display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center">`
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center">`
 
             videosArray.forEach(video => {
 
 
                 str += `<div class="video" id="${video.id.videoId}" style="display:flex; justify-conter:center; align-items:center; border-bottom:1px solid black; padding:16px;">
-                                         <h6 style="margin-left:10px; width:700px">${video.snippet.title}</h6>
-                                            <button onclick=executevideo(this) class="pull_video">pull video</button>
-                                        </div>`
+                                             <h6 style="margin-left:10px; width:700px">${video.snippet.title}</h6>
+                                                <button onclick=executevideo(this) class="pull_video">pull video</button>
+                                            </div>`
             });
             str += `<div id="iframe_wrapper"> </div>"`
             document.getElementById("cointaner").innerHTML += str;
