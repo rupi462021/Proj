@@ -23,3 +23,6 @@ function ajaxCallLocal(method, api, data, successCB, errorCB) {
     });
 }
 
+
+
+

@@ -46,6 +46,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -164,6 +167,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\DAL\DBvela.cs" />
     <Compile Include="Models\DAL\DBServ.cs" />
     <Compile Include="Models\DAL\DBServices.cs" />
     <Compile Include="Models\DAL\DBServicesS.cs" />
@@ -176,6 +180,7 @@
     <Compile Include="Models\Videos.cs" />
     <Compile Include="Models\XMLServiceItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="response\Content.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -198,6 +203,7 @@
     <Content Include="Pages\registration.html" />
     <Content Include="Pages\SavedItems.html" />
     <Content Include="Pages\style.css" />
+    <Content Include="Pages\test.html" />
     <Content Include="Pages\videoPage.html" />
     <Content Include="Scripts\ajaxCalls.js" />
     <Content Include="Scripts\ajaxCallsWithKey.js" />
@@ -243,6 +249,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Views\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -330,10 +330,11 @@
             ajaxCallLocal("GET", api, "", getTitle, getTitleError);
         }
         function getTitle(data) {
-            console.log("Yeeeessss");
+            console.log("yess");
             strTitle = '<option value="-1">בחר</option>';
             for (var i = 0; i < data.length; i++) {
-                strTitle += '<option value=' + data[i].Id + '>' + data[i].Title + '</option>'
+                console.log(data[i].end_datetime)
+                strTitle += '<option value=' + data[i].end_datetime + '>' + data[i].Title + '</option>'
             }
             console.log("sssss");
 
