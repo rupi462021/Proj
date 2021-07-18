@@ -195,19 +195,7 @@
             $("#showItems").append(str);
 
         }
-        function showVideo() {
-            console.log("in videi");
-            let api1 = "http://10.120.17.160:8701/VelaEncompassService/API/GetPlayback?callsign=26cf1d0b-0e71-420b-ae78-b023e62d0a41&start_datetime=2021-03-15T07:15&end_datetime=2021-03-16T08:21:00";
-            ajaxCall("GET", api1, "", getVideouccess, getVideoError);
-
-        }
-        function getVideouccess(data) {
-            console.log(data);
-        }
-        function getVideoError(err) {
-            console.log(err);
-            console.log("failed");
-        }
+       
         function sendText(cntrl) {
             console.log("in send");
             var by = cntrl.id;
@@ -326,8 +314,12 @@
 
         function showVideoTitle() {
             console.log("in rend");
-            let api = "../api/Videos";
-            ajaxCallLocal("GET", api, "", getTitle, getTitleError);
+            date = "2021-05-17"
+            let startDate = "12:00";
+            let endDate = "14:00";
+            /*    let api = "../api/student/" + startDate + "/date/" + endDate;*/
+            let api = "../api/Videos?from=" + startDate + "&to=" + endDate +"&date="+date;
+            ajaxCall("GET", api, "", suc, err);
         }
         function getTitle(data) {
             console.log("yess");
@@ -340,7 +332,29 @@
 
             $("#vlist").append(strTitle);
         }
+        function suc(data) {
+            $("#aaa").html('').append($('', { src: 'blah.gif' }));
+            console.log("yess")
+            console.log(data)
+            arr = JSON.parse(data);
+            console.log(arr.GetPlaybackResult.Result)
+            video = `<video id="my-video"
+                class="video-js"
+                controls
+                preload="auto"
+                width="720px"
+                height="264"
+              
+                data-setup="{}">
+                <source src=${arr.GetPlaybackResult.Result} type="video/mp4" />
 
+            </video>`
+            $("#aaa").append(video);
+
+        }
+        function err(err) {
+            console.log(err)
+        }
         function getTitleError(data) {
             console.log("noooo")
         }
